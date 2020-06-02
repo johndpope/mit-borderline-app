@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_mit_borderline_app_mit_borderline_appUITests : NSObject
+@end
+@implementation PodsDummy_Pods_mit_borderline_app_mit_borderline_appUITests
+@end
