@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B39FCF8D0B118FE19C77762 /* Pods_mit_borderline_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D998FE1257C0645BBC63E61 /* Pods_mit_borderline_app.framework */; };
+		2680FFB0248DFF0A004C5CE3 /* elisa_young.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */; };
+		2680FFB2248DFF49004C5CE3 /* logoAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2680FFB1248DFF49004C5CE3 /* logoAnimation.gif */; };
 		26A2DA1324859E6B00A926DE /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2DA1224859E6B00A926DE /* LogoAnimationView.swift */; };
-		26A2DA152485A11C00A926DE /* logoAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 26A2DA142485A11C00A926DE /* logoAnimation.gif */; };
 		26A2DA172485A25E00A926DE /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2DA162485A25E00A926DE /* UIView+Constraints.swift */; };
 		26CF038024858BD2003D1AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF037F24858BD2003D1AB7 /* AppDelegate.swift */; };
 		26CF038224858BD2003D1AB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF038124858BD2003D1AB7 /* SceneDelegate.swift */; };
@@ -42,8 +43,9 @@
 
 /* Begin PBXFileReference section */
 		1395538D13F77F1B47FEBFD4 /* Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig"; path = "Target Support Files/Pods-mit-borderline-app-mit-borderline-appUITests/Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = elisa_young.mp4; sourceTree = "<group>"; };
+		2680FFB1248DFF49004C5CE3 /* logoAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logoAnimation.gif; sourceTree = "<group>"; };
 		26A2DA1224859E6B00A926DE /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
-		26A2DA142485A11C00A926DE /* logoAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = logoAnimation.gif; path = ../../../../../../Desktop/logoAnimation.gif; sourceTree = "<group>"; };
 		26A2DA162485A25E00A926DE /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		26CF037C24858BD2003D1AB7 /* mit-borderline-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mit-borderline-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF037F24858BD2003D1AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		26CF037E24858BD2003D1AB7 /* mit-borderline-app */ = {
 			isa = PBXGroup;
 			children = (
+				2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */,
 				26CF037F24858BD2003D1AB7 /* AppDelegate.swift */,
 				26CF038124858BD2003D1AB7 /* SceneDelegate.swift */,
 				26A2DA182485DE4700A926DE /* Views */,
@@ -155,7 +158,7 @@
 				26A2DA1A2485DEC700A926DE /* Utils */,
 				26CF038824858BD3003D1AB7 /* Assets.xcassets */,
 				26CF038D24858BD3003D1AB7 /* Info.plist */,
-				26A2DA142485A11C00A926DE /* logoAnimation.gif */,
+				2680FFB1248DFF49004C5CE3 /* logoAnimation.gif */,
 			);
 			path = "mit-borderline-app";
 			sourceTree = "<group>";
@@ -312,7 +315,8 @@
 			files = (
 				26CF038C24858BD3003D1AB7 /* LaunchScreen.storyboard in Resources */,
 				26CF038924858BD3003D1AB7 /* Assets.xcassets in Resources */,
-				26A2DA152485A11C00A926DE /* logoAnimation.gif in Resources */,
+				2680FFB0248DFF0A004C5CE3 /* elisa_young.mp4 in Resources */,
+				2680FFB2248DFF49004C5CE3 /* logoAnimation.gif in Resources */,
 				26CF038724858BD2003D1AB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
