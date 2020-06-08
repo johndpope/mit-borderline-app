@@ -65,7 +65,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             // Create a video player
-            let videoUrl = Bundle.main.url(forResource: "elisa_young", withExtension: "mp4")!
+            let videoUrl = Bundle.main.url(forResource: imageAnchor.referenceImage.name, withExtension: "mp4")!
             let videoPlayer = AVPlayer(url: videoUrl)
             
             // To make the video loop
