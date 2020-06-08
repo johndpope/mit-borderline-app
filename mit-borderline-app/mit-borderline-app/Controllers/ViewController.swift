@@ -13,8 +13,8 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
-    
     let logoAnimationView = LogoAnimationView()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             configuration.trackingImages = trackedImages
             
             configuration.maximumNumberOfTrackedImages = 1
-            
-//            configuration.automaticImageScaleEstimationEnabled = true
-            
         }
 
         // Run the view's session
@@ -70,7 +67,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             // Create a video player
             let videoUrl = Bundle.main.url(forResource: "elisa_young", withExtension: "mp4")!
             let videoPlayer = AVPlayer(url: videoUrl)
-
+            
             // To make the video loop
             videoPlayer.actionAtItemEnd = .none
             NotificationCenter.default.addObserver(
@@ -83,7 +80,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             videoNode.play()
             
-            let videoScene = SKScene(size: CGSize(width: 600, height: 600))
+            let videoScene = SKScene(size: resolutionForLocalVideo(url: videoUrl)!)
             
             videoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2) // centers video
             videoNode.yScale = -1.0 // flips video to correct orientation
@@ -91,19 +88,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             videoScene.addChild(videoNode)
             
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
-            
             plane.firstMaterial?.diffuse.contents = videoScene
             
             let planeNode = SCNNode(geometry: plane)
-            
             planeNode.eulerAngles.x = -.pi / 2
-            
             node.addChildNode(planeNode)
             
         }
         return node
     }
     
+    // Gets video dimensions used to initialize SKScene in renderer
+    private func resolutionForLocalVideo(url: URL) -> CGSize? {
+        guard let track = AVURLAsset(url: url).tracks(withMediaType: AVMediaType.video).first else { return nil }
+       let size = track.naturalSize.applying(track.preferredTransform)
+        return CGSize(width: abs(size.width), height: abs(size.height))
+    }
     
     // This callback will restart the video when it has reach its end
     @objc func playerItemDidReachEnd(notification: NSNotification) {
