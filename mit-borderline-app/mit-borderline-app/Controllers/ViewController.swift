@@ -44,7 +44,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         if let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "BorderlineImages", bundle: Bundle.main) {
             configuration.trackingImages = trackedImages
             
-            configuration.maximumNumberOfTrackedImages = 1
+            configuration.maximumNumberOfTrackedImages = 10 // arbitrary number
         }
 
         // Run the view's session
@@ -65,7 +65,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         if let imageAnchor = anchor as? ARImageAnchor {
             // Create a video player
-            let videoUrl = Bundle.main.url(forResource: imageAnchor.referenceImage.name, withExtension: "mp4")!
+            let videoUrl = Bundle.main.url(forResource: "Animations/" + imageAnchor.referenceImage.name!, withExtension: "mp4")!
             let videoPlayer = AVPlayer(url: videoUrl)
             
             // To make the video loop

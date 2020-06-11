@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B39FCF8D0B118FE19C77762 /* Pods_mit_borderline_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D998FE1257C0645BBC63E61 /* Pods_mit_borderline_app.framework */; };
-		2680FFB0248DFF0A004C5CE3 /* elisa_young.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */; };
 		2680FFB2248DFF49004C5CE3 /* logoAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2680FFB1248DFF49004C5CE3 /* logoAnimation.gif */; };
 		26A2DA1324859E6B00A926DE /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2DA1224859E6B00A926DE /* LogoAnimationView.swift */; };
 		26A2DA172485A25E00A926DE /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2DA162485A25E00A926DE /* UIView+Constraints.swift */; };
@@ -20,6 +19,7 @@
 		26CF038C24858BD3003D1AB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CF038A24858BD3003D1AB7 /* LaunchScreen.storyboard */; };
 		26CF039724858BD3003D1AB7 /* mit_borderline_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF039624858BD3003D1AB7 /* mit_borderline_appTests.swift */; };
 		26CF03A224858BD4003D1AB7 /* mit_borderline_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CF03A124858BD4003D1AB7 /* mit_borderline_appUITests.swift */; };
+		26EEC5902491EB2100AF6E7B /* Animations in Resources */ = {isa = PBXBuildFile; fileRef = 26EEC58F2491EB2100AF6E7B /* Animations */; };
 		4C26F8E88E6CF9AFF1C061AB /* Pods_mit_borderline_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2B9A8B14FC7B66A7F202E2 /* Pods_mit_borderline_appTests.framework */; };
 		D2E9D6FB173583980AD73982 /* Pods_mit_borderline_app_mit_borderline_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D7B060E10D2A2B0F1A604B /* Pods_mit_borderline_app_mit_borderline_appUITests.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		1395538D13F77F1B47FEBFD4 /* Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig"; path = "Target Support Files/Pods-mit-borderline-app-mit-borderline-appUITests/Pods-mit-borderline-app-mit-borderline-appUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = elisa_young.mp4; sourceTree = "<group>"; };
 		2680FFB1248DFF49004C5CE3 /* logoAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logoAnimation.gif; sourceTree = "<group>"; };
 		26A2DA1224859E6B00A926DE /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
 		26A2DA162485A25E00A926DE /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		26CF039D24858BD4003D1AB7 /* mit-borderline-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mit-borderline-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26CF03A124858BD4003D1AB7 /* mit_borderline_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mit_borderline_appUITests.swift; sourceTree = "<group>"; };
 		26CF03A324858BD4003D1AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26EEC58F2491EB2100AF6E7B /* Animations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Animations; sourceTree = "<group>"; };
 		4C2B9A8B14FC7B66A7F202E2 /* Pods_mit_borderline_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mit_borderline_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF639E99591E6D2083CF0CD /* Pods-mit-borderline-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mit-borderline-appTests.release.xcconfig"; path = "Target Support Files/Pods-mit-borderline-appTests/Pods-mit-borderline-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D998FE1257C0645BBC63E61 /* Pods_mit_borderline_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mit_borderline_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +150,7 @@
 		26CF037E24858BD2003D1AB7 /* mit-borderline-app */ = {
 			isa = PBXGroup;
 			children = (
-				2680FFAF248DFF0A004C5CE3 /* elisa_young.mp4 */,
+				26EEC58F2491EB2100AF6E7B /* Animations */,
 				26CF037F24858BD2003D1AB7 /* AppDelegate.swift */,
 				26CF038124858BD2003D1AB7 /* SceneDelegate.swift */,
 				26A2DA182485DE4700A926DE /* Views */,
@@ -271,6 +271,9 @@
 		26CF037424858BD2003D1AB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					elisa_young,
+				);
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Elaine Xiao";
@@ -313,9 +316,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26EEC5902491EB2100AF6E7B /* Animations in Resources */,
 				26CF038C24858BD3003D1AB7 /* LaunchScreen.storyboard in Resources */,
 				26CF038924858BD3003D1AB7 /* Assets.xcassets in Resources */,
-				2680FFB0248DFF0A004C5CE3 /* elisa_young.mp4 in Resources */,
 				2680FFB2248DFF49004C5CE3 /* logoAnimation.gif in Resources */,
 				26CF038724858BD2003D1AB7 /* Main.storyboard in Resources */,
 			);
