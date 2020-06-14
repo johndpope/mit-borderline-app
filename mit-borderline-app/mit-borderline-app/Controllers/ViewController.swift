@@ -77,23 +77,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 object: videoPlayer.currentItem)
             
             let videoNode = SKVideoNode(avPlayer: videoPlayer)
-            
             videoNode.play()
             
+            // Initialize videoScene
             let videoScene = SKScene(size: resolutionForLocalVideo(url: videoUrl)!)
             
+            // Rescale and center videoNode
             videoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2) // centers video
             videoNode.yScale = -1.0 // flips video to correct orientation
-            
             videoScene.addChild(videoNode)
             
+            // Create plane for videoScene
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
             plane.firstMaterial?.diffuse.contents = videoScene
             
             let planeNode = SCNNode(geometry: plane)
             planeNode.eulerAngles.x = -.pi / 2
             node.addChildNode(planeNode)
-            
+
         }
         return node
     }
@@ -111,6 +112,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             playerItem.seek(to: CMTime.zero)
         }
     }
+    
     
 }
 
