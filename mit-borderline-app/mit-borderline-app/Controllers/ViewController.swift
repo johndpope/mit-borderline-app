@@ -83,8 +83,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let videoScene = SKScene(size: resolutionForLocalVideo(url: videoUrl)!)
             
             // Rescale and center videoNode
-            videoNode.position = CGPoint(x: videoScene.size.width/2, y: videoScene.size.height/2) // centers video
-            videoNode.yScale = -1.0 // flips video to correct orientation
+            rescaleVideoNode(videoNode: videoNode, sceneWidth: videoScene.size.width, sceneHeight: videoScene.size.height)
             videoScene.addChild(videoNode)
             
             // Create plane for videoScene
@@ -106,6 +105,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return CGSize(width: abs(size.width), height: abs(size.height))
     }
     
+    // Rescales and centers videoNode
+    private func rescaleVideoNode(videoNode: SKVideoNode, sceneWidth: CGFloat, sceneHeight: CGFloat) {
+        videoNode.position = CGPoint(x: sceneWidth/2, y: sceneHeight/2) // centers video
+        videoNode.yScale = -1.0 // flips video to correct orientation
+    }
+    
     // This callback will restart the video when it has reach its end
     @objc func playerItemDidReachEnd(notification: NSNotification) {
         if let playerItem: AVPlayerItem = notification.object as? AVPlayerItem {
@@ -116,6 +121,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
 }
 
+// Hide GIF after it stops playing
 extension ViewController: SwiftyGifDelegate {
     func gifDidStop(sender: UIImageView) {
         logoAnimationView.isHidden = true
