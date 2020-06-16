@@ -1,3 +1,3 @@
 # mit-borderline-app
 
-See more at https://www.theborderline.net/
+See more about the project at our [website](borderline.mit.edu)!
