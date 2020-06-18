@@ -1,4 +1,3 @@
 # mit-borderline-app
-MIT Borderline's AR app to view mural animations!
 
-See more at https://www.theborderline.net/
+See more about the project at our [website](http://borderline.mit.edu)!
