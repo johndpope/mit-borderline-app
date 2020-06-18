@@ -32,7 +32,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logoAnimationView.logoGifImageView.startAnimatingGif()
+//        logoAnimationView.logoGifImageView.startAnimatingGif()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +81,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             // Initialize videoScene
             let videoScene = SKScene(size: resolutionForLocalVideo(url: videoUrl)!)
+            videoScene.backgroundColor = UIColor.clear
+            videoScene.view?.allowsTransparency = true
+            videoScene.view?.backgroundColor = UIColor.clear
             
             // Rescale and center videoNode
             rescaleVideoNode(videoNode: videoNode, sceneWidth: videoScene.size.width, sceneHeight: videoScene.size.height)
@@ -88,6 +91,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             // Create effect node to make background transparent
             let effectNode = SKEffectNode()
             effectNode.addChild(videoNode)
+            effectNode.shouldEnableEffects = true
             effectNode.filter = colorCubeFilterForChromaKey(hueAngle: 120)
             
             // Add effect node to videoScene
@@ -125,6 +129,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    // Convert RGB representation to HSV (hue-saturation-brightness) representation, helper for colorCubeFilterForChromaKey (easier to isolate and remove a color based on hue)
     func RGBtoHSV(r : Float, g : Float, b : Float) -> (h : Float, s : Float, v : Float) {
         var h : CGFloat = 0
         var s : CGFloat = 0
@@ -135,27 +140,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     func colorCubeFilterForChromaKey(hueAngle: Float) -> CIFilter {
-
-        let hueRange: Float = 20 // degrees size pie shape that we want to replace
+        let hueRange: Float = 20 // degrees size pie shape that we want to make transparent
         let minHueAngle: Float = (hueAngle - hueRange/2.0) / 360
         let maxHueAngle: Float = (hueAngle + hueRange/2.0) / 360
-
+        
+        // Create a color cube (3D color-lookup table that assigns a transparency value to RGB colors)
         let size = 64
         var cubeData = [Float](repeating: 0, count: size * size * size * 4)
         var rgb: [Float] = [0, 0, 0]
         var hsv: (h : Float, s : Float, v : Float)
         var offset = 0
 
+        // Set value in color cube to 0 (transparent) if it falls in hueRange
+        // Loop through each color combination of R, G, B, simulating a color gradient
         for z in 0 ..< size {
-            rgb[2] = Float(z) / Float(size) // blue value
+            rgb[2] = Float(z) / Float(size-1) // blue value
             for y in 0 ..< size {
-                rgb[1] = Float(y) / Float(size) // green value
+                rgb[1] = Float(y) / Float(size-1) // green value
                 for x in 0 ..< size {
-
-                    rgb[0] = Float(x) / Float(size) // red value
+                    rgb[0] = Float(x) / Float(size-1) // red value
+                    
                     hsv = RGBtoHSV(r: rgb[0], g: rgb[1], b: rgb[2])
-                    // TODO: Check if hsv.s > 0.5 is really nesseccary
-                    let alpha: Float = (hsv.h > minHueAngle && hsv.h < maxHueAngle && hsv.s > 0.5) ? 0 : 1.0
+                    
+                    let alpha: Float = (hsv.h > minHueAngle && hsv.h < maxHueAngle) ? 0 : 1.0
 
                     cubeData[offset] = rgb[0] * alpha
                     cubeData[offset + 1] = rgb[1] * alpha
@@ -174,8 +181,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             ])
         return colorCube!
     }
-    
-    
 }
 
 // Hide GIF after it stops playing
